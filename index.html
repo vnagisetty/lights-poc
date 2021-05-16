@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dashboard</title>
+	<style>
+		.button {
+		  background-color: #4CAF50; /* Green */
+		  border: none;
+		  color: white;
+		  padding: 15px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		}
+		
+		.button2 {background-color: #008CBA;} /* Blue */
+		.button3 {background-color: #f44336;} /* Red */ 
+		.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+		.offbtn {background-color: #555555;} /* Black */
+		.onbtn {background-color: #4CAF50;} /* Green */
+	</style>	
+</head>
+<script language="javascript" type="text/javascript">
+	
+	// Called whenever the HTML button is pressed
+	function onPress() {
+		
+				
+		var btn = document.getElementById("toggleButton");
+		console.log("1. " + btn.innerHTML);
+		if (btn.innerHTML=="ON") {
+			
+			btn.innerHTML="OFF";
+			btn.classList.remove("onbtn");
+			btn.classList.add("offbtn");
+			
+		}
+		else {btn.innerHTML="ON"; 
+			
+			btn.classList.remove("offbtn");
+			btn.classList.add("onbtn");
+			
+		}
+		
+		//alert('you pressed it');
+		var custid=document.getElementById('custId');
+		//alert(custid.value);
+		
+		if (custid.value=="OFF"){
+			custid.value="ON";
+		}
+		else {custid.value="OFF"};
+		
+		document.canvasform.submit();
+	}
+	
+	
+	
+
+</script>
+<body>
+	<h2>LED Control</h2>
+	<form action="/" name="canvasform" method="POST">
+		<table>
+    	<tr>
+        <td><button id="toggleButton" onclick="onPress()"  class="button offbtn" >OFF</button></td>
+		<input type="hidden" id="custId" name="custId" value="OFF">
+    	</tr>
+		</table>
+	</form>
+</body>
+</html>
