@@ -1,5 +1,5 @@
 var awsIot = require("aws-iot-device-sdk");
-c
+
 exports.startMQTT = function () {
   //
   // Replace the values of '<YourUniqueClientIdentifier>' and '<YourCustomEndpoint>'
